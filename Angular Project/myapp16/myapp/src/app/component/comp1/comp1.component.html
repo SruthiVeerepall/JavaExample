@@ -1,0 +1,9 @@
+
+<h1>This is Component 1 Score</h1>
+<h1>Enter Your Score: </h1><input type="text" #p (keyDown)="0">
+
+<button (click)="addScore(p.value)">AddScore</button>
+<div *ngFor= "let data of updatedScores">
+    {{data}}
+</div>
+<hr>

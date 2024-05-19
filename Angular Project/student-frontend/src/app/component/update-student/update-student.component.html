@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="container">
+
+            <form [formGroup]="regForm1" (ngSubmit)="update()">
+                <div class="mb-3">
+                    <label for="text" class="form-label">Student Name</label>
+                    <input type="text" class="form-control" id="studentName" formControlName="studentName"
+                        placeholder="Enter Student Name" aria-describedby="emailHelp">
+                    <div *ngIf="regForm1.controls['studentName'].touched && !regForm1.controls['studentName'].valid">
+                        <span *ngIf="regForm1.controls['studentName'].hasError('required')">
+                            Student Name is Required
+                        </span>
+                        <span *ngIf="regForm1.controls['studentName'].hasError('minlength')">
+                            Student Name minimum lenght is 4
+                        </span>
+                        <span *ngIf="regForm1.controls['studentName'].hasError('maxlength')">
+                            Student Name maximum lenght is 10
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="studentEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="studentEmail" formControlName="studentEmail"
+                        placeholder="Enter Student Email" aria-describedby="emailHelp">
+                    <div *ngIf="regForm1.controls['studentEmail'].touched && !regForm1.controls['studentEmail'].valid">
+                        <span *ngIf="regForm1.controls['studentEmail'].hasError('required')">
+                            Student Email is Required
+                        </span>
+                        <span *ngIf="regForm1.controls['studentEmail'].hasError('email')">
+                            Please provide proper Email
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="studentAge" class="form-label">Student Age</label>
+                    <input type="text" class="form-control" id="studentAge" formControlName="studentAge"
+                        placeholder="Enter Student Age" aria-describedby="emailHelp">
+                        <div *ngIf="regForm1.controls['studentAge'].touched && !regForm1.controls['studentAge'].valid">
+                            <span *ngIf="regForm1.controls['studentAge'].hasError('required')">
+                                Student Age is Required
+                            </span>
+                            <span *ngIf="regForm1.controls['studentAge'].hasError('minlength')">
+                                Student Age minimum lenght is 1
+                            </span>
+                            <span *ngIf="regForm1.controls['studentAge'].hasError('maxlength')">
+                                Student Age maximum lenght is 4
+                            </span>
+                        </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password"
+                        placeholder="Enter Studen Password">
+                        <div *ngIf="regForm1.controls['password'].touched && !regForm1.controls['password'].valid">
+                            <span *ngIf="regForm1.controls['password'].hasError('required')">
+                                Student password is Required
+                            </span>
+                            <span *ngIf="regForm1.controls['password'].hasError('minlength')">
+                                Student password minimum lenght is 4
+                            </span>
+                            <span *ngIf="regForm1.controls['password'].hasError('password')">
+                                Student password maximum lenght is 10
+                            </span>
+                        </div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark">Update</button>&nbsp;
+                    
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

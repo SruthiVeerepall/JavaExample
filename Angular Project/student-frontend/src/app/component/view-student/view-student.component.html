@@ -1,0 +1,29 @@
+
+<div class="container">
+    <h1 class="text-center">Student List</h1>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Student Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of students">
+            <td>{{data.studentId}}</td>
+            <td>{{data.studentName}}</td>
+            <td>{{data.studentEmail}}</td>
+            <td>{{data.studentAge}}</td>
+            <td><a routerLink="updateStudent/{{data.studentId}}">Update</a> | 
+                <i class="fa fa-trash -o" aria-hidden="true" (click)="deleteRecord(data.studentId)"></i> 
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+</div>

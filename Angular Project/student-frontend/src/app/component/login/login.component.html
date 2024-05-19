@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="container">
+
+            <form [formGroup]="regForm" (ngSubmit)="login()">
+
+                <div class="mb-3">
+                    <label for="text" class="form-label">Student Name</label>
+                    <input type="text" class="form-control" id="studentName" formControlName="studentName"
+                        placeholder="Enter Student Name" aria-describedby="emailHelp">
+                    <div *ngIf="regForm.controls['studentName'].touched && !regForm.controls['studentName'].valid">
+                        <span *ngIf="regForm.controls['studentName'].hasError('required')">
+                            Student Name is Required
+                        </span>
+                        <span *ngIf="regForm.controls['studentName'].hasError('minlength')">
+                            Student Name minimum lenght is 4
+                        </span>
+                        <span *ngIf="regForm.controls['studentName'].hasError('maxlength')">
+                            Student Name maximum lenght is 10
+                        </span>
+                    </div>
+                </div>
+                
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password"
+                        placeholder="Enter Studen Password">
+                        <div *ngIf="regForm.controls['password'].touched && !regForm.controls['password'].valid">
+                            <span *ngIf="regForm.controls['password'].hasError('required')">
+                                Student password is Required
+                            </span>
+                            <span *ngIf="regForm.controls['password'].hasError('minlength')">
+                                Student password minimum lenght is 4
+                            </span>
+                            <span *ngIf="regForm.controls['password'].hasError('password')">
+                                Student password maximum lenght is 10
+                            </span>
+                        </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark">Login</button>&nbsp;
+                   
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
